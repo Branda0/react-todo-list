@@ -1,1 +1,148 @@
 /* Other rules */
+* {
+  /* font-family: "Montserrat", sans-serif; */
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.icon-header {
+  color: #5c48d3;
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.color-mode-container {
+  display: flex;
+  margin: 0 20px 0 10px;
+  align-items: center;
+  /* background-color: #5c48d3; */
+  border: 1px solid #e5e5e5;
+  position: relative;
+  width: 80px;
+  height: 30px;
+  border-radius: 25px;
+}
+
+.icon-sun {
+  position: absolute;
+  left: 10px;
+}
+
+.icon-moon {
+  position: absolute;
+  right: 10px;
+}
+.title-header {
+  font-size: 25px;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+.entry {
+  max-width: 500px;
+  width: 100%;
+  margin: 80px 20px 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-entry {
+  flex: 1;
+  height: 50px;
+  border: 1px solid #5c48d3;
+  background-color: #f2f7fd;
+  border-radius: 10px;
+  font-size: px;
+  font-family: inherit;
+  margin-right: 30px;
+  padding-left: 20px;
+}
+
+.submit-btn {
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  background-color: #5c48d3;
+  color: white;
+  border: 1px solid #5c48d3;
+  border-radius: 10px;
+  font-family: inherit;
+}
+.submit-btn:hover {
+  opacity: 80%;
+}
+.submit-btn:active {
+  background-color: white;
+  color: #5c48d3;
+}
+
+.task-container {
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+
+.search-container {
+  height: 30px;
+  width: 400px;
+  border: none;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #5c48d3;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.task-text {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.icon-trash {
+  color: #5c48d3;
+  margin-left: 10px;
+}
+
+.footer-container {
+  line-height: 120px;
+  text-align: center;
+  font-size: 15px;
+}
+b {
+  font-weight: 600;
+}
+
+/* NIGHT MODE */
+
+.night {
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
