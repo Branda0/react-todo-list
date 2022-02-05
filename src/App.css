@@ -94,9 +94,7 @@
   border-radius: 10px;
   font-family: inherit;
 }
-.submit-btn:hover {
-  opacity: 80%;
-}
+
 .submit-btn:active {
   background-color: white;
   color: #5c48d3;
