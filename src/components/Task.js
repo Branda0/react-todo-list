@@ -1,15 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+const axios = require("axios");
 
 const Task = ({ task, setTasks, tasks, index }) => {
-  const handleClick = () => {
+  const handleDelete = async () => {
     const newTasks = [...tasks];
     newTasks.splice(index, 1);
     setTasks(newTasks);
+    try {
+      const response = await axios.get(`http://localhost:3000/delete?title=${task[0]}`);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
-  const handleCheck = () => {
+  const handleCheck = async () => {
     const newTasks = [...tasks];
-
     newTasks.splice(index, 1);
     //IF checked => (task already done) => push in end of list
     if (task[1]) {
@@ -18,6 +24,13 @@ const Task = ({ task, setTasks, tasks, index }) => {
       newTasks.push([task[0], true]);
     }
     setTasks(newTasks);
+    try {
+      const response = await axios.get(`http://localhost:3000/update?title=${task[0]}`);
+
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -26,7 +39,7 @@ const Task = ({ task, setTasks, tasks, index }) => {
       <span className="task-text" style={{ textDecoration: task[1] && "line-through" }}>
         {task}
       </span>
-      <FontAwesomeIcon className="icon-trash" icon="trash" onClick={handleClick} />
+      <FontAwesomeIcon className="icon-trash" icon="trash" onClick={handleDelete} />
     </div>
   );
 };

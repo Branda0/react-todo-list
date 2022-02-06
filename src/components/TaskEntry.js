@@ -1,13 +1,27 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+const axios = require("axios");
 
-const TaskEntry = ({ setTasks, tasks }) => {
+const TaskEntry = ({ setTasks, tasks, chargeDB }) => {
   const [newTask, setNewTask] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (newTask) {
+      const data = {
+        title: newTask,
+        done: false,
+      };
+
+      try {
+        const response = await axios.post("http://localhost:3000/form", data);
+        console.log(response.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+
       const newTasks = [...tasks];
-      newTasks.unshift([newTask, false]);
+      newTasks.unshift([newTask, false, 0]);
       setTasks(newTasks);
       setNewTask("");
     }
@@ -22,6 +36,7 @@ const TaskEntry = ({ setTasks, tasks }) => {
           setNewTask(event.target.value);
         }}
       />
+      <FontAwesomeIcon className="icon-sync" icon="sync-alt" onClick={chargeDB} />
       <button className="submit-btn" type="submit">
         Add task
       </button>
