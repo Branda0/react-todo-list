@@ -9,7 +9,7 @@ const TaskEntry = ({ setTasks, tasks, chargeDB }) => {
     event.preventDefault();
     if (newTask) {
       const data = {
-        title: newTask,
+        title: newTask.trim(),
         done: false,
       };
 
