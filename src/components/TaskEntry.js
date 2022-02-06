@@ -21,7 +21,7 @@ const TaskEntry = ({ setTasks, tasks, chargeDB }) => {
       }
 
       const newTasks = [...tasks];
-      newTasks.unshift([newTask, false, 0]);
+      newTasks.unshift([newTask, false]);
       setTasks(newTasks);
       setNewTask("");
     }
