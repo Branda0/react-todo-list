@@ -7,7 +7,7 @@ const Task = ({ task, setTasks, tasks, index }) => {
     newTasks.splice(index, 1);
     setTasks(newTasks);
     try {
-      const response = await axios.get(`http://localhost:3000/delete?title=${task[0]}`);
+      const response = await axios.get(`https://brandao-todo-list.herokuapp.com/delete?title=${task[0]}`);
       console.log(response.data);
     } catch (error) {
       console.log(error.message);
@@ -25,7 +25,7 @@ const Task = ({ task, setTasks, tasks, index }) => {
     }
     setTasks(newTasks);
     try {
-      const response = await axios.get(`http://localhost:3000/update?title=${task[0]}`);
+      const response = await axios.get(`https://brandao-todo-list.herokuapp.com/update?title=${task[0]}`);
 
       console.log(response.data);
     } catch (error) {

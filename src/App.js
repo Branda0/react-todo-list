@@ -20,7 +20,7 @@ function App() {
 
   const chargeDB = async () => {
     try {
-      const dbTasks = await axios.get("http://localhost:3000");
+      const dbTasks = await axios.get("https://brandao-todo-list.herokuapp.com/");
       console.log(dbTasks.data);
       const chargedTasks = [];
       dbTasks.data.map((elem, index) => {

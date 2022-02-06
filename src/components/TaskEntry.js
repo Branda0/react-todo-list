@@ -14,7 +14,7 @@ const TaskEntry = ({ setTasks, tasks, chargeDB }) => {
       };
 
       try {
-        const response = await axios.post("http://localhost:3000/form", data);
+        const response = await axios.post("https://brandao-todo-list.herokuapp.com/form", data);
         console.log(response.data);
       } catch (error) {
         console.log(error.message);
