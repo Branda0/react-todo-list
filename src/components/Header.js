@@ -13,7 +13,7 @@ const Header = ({ setNightmode, nightmode }) => {
           <FontAwesomeIcon
             className="icon-sun"
             icon="sun"
-            // style={{ color: nightmode && "#9e9e9e" }}
+            style={{ color: nightmode && "#9e9e9e" }}
             onClick={(event) => {
               setNightmode(false);
             }}
@@ -21,7 +21,7 @@ const Header = ({ setNightmode, nightmode }) => {
           <FontAwesomeIcon
             className="icon-moon"
             icon="moon"
-            // style={{ color: !nightmode && "#9e9e9e" }}
+            style={{ color: !nightmode && "#9e9e9e" }}
             onClick={(event) => {
               console.log("moon");
               setNightmode(true);
